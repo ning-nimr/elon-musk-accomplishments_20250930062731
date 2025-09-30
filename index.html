@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk - Visionary Entrepreneur</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .bio-image {
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: auto;
+        }
+        
+        .company-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 2rem;
+        }
+        
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .company-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .company-content {
+            padding: 1.5rem;
+        }
+        
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Elon Musk</h1>
+            <p>Visionary Entrepreneur, Innovator, and Business Magnate</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#biography">Biography</a></li>
+            <li><a href="#companies">Companies</a></li>
+            <li><a href="#innovations">Innovations</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="biography">
+            <h2>Biography</h2>
+            <div class="bio-grid">
+                <div>
+                    <p>Born on June 28, 1971, in Pretoria, South Africa, Elon Musk has become one of the most influential entrepreneurs of the 21st century. He is the founder, CEO, and chief engineer of SpaceX; CEO and product architect of Tesla, Inc.; owner and CEO of X (formerly Twitter); founder of The Boring Company; co-founder of Neuralink and OpenAI; and president of the Musk Foundation.</p>
+                    
+                    <h3>Early Life and Education</h3>
+                    <p>Musk was born to Maye Musk, a Canadian model and dietitian, and Errol Musk, a South African electromechanical engineer. After his parents' divorce in 1980, Musk primarily lived with his father. He attended Waterkloof House Preparatory School, Bryanston High School, and Pretoria Boys High School.</p>
+                    
+                    <p>In 1989, Musk moved to Canada to attend Queen's University in Kingston, Ontario. Two years later, he transferred to the University of Pennsylvania, where he earned bachelor's degrees in physics and economics in 1997. He briefly enrolled in a Ph.D. program in physics at Stanford University but left after two days to pursue entrepreneurial ventures.</p>
+                    
+                    <h3>Entrepreneurial Journey</h3>
+                    <p>Musk's entrepreneurial journey began with Zip2, a company providing online city guide software to newspapers, which Compaq acquired in 1999 for $307 million. He then co-founded X.com, an online payment company that later became PayPal and was acquired by eBay in 2002 for $1.5 billion.</p>
+                    
+                    <p>As of 2025, Musk is the wealthiest person in the world, with an estimated net worth of over $400 billion, primarily derived from his stakes in Tesla and SpaceX.</p>
+                </div>
+                <img src="https://media.cnn.com/api/v1/images/stellar/prod/200513113410-14-elon-musk-unfurled-restricted.jpg?q=w_3000,c_fill" alt="Elon Musk portrait" class="bio-image">
+            </div>
+        </section>
+        
+        <section id="companies">
+            <h2>Companies</h2>
+            <div class="company-grid">
+                <div class="company-card">
+                    <img src="https://www.teslarati.com/wp-content/uploads/2022/10/tesla-cybertruck-scaled.jpeg" alt="Tesla Cybertruck" class="company-image">
+                    <div class="company-content">
+                        <h3>Tesla, Inc.</h3>
+                        <p>Founded in 2003, Tesla has revolutionized the electric vehicle industry under Musk's leadership. The company introduced groundbreaking models like the Roadster, Model S, Model 3, Model X, and Cybertruck, making EVs mainstream.</p>
+                        <p>Tesla also developed the Gigafactory to produce batteries at scale and expanded into renewable energy solutions with products like Solar Roof and Powerwall.</p>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="https://www.teslarati.com/wp-content/uploads/2025/02/spacex-jrti-landing-first-scaled.jpeg" alt="SpaceX Falcon 9 landing" class="company-image">
+                    <div class="company-content">
+                        <h3>SpaceX</h3>
+                        <p>Established in 2002, SpaceX aims to reduce space transportation costs and enable Mars colonization. The company achieved several milestones, including the first privately funded liquid-propellant rocket to reach orbit and the development of reusable rockets.</p>
+                        <p>SpaceX's Starlink satellite internet constellation provides high-speed internet access worldwide, serving over 5 million customers in 100 countries as of 2025.</p>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="https://miro.medium.com/v2/resize:fit:2000/1*C7et-VUWIBfpP8LFpyMktQ.png" alt="Neuralink brain implant" class="company-image">
+                    <div class="company-content">
+                        <h3>Neuralink</h3>
+                        <p>Co-founded by Musk in 2016, Neuralink focuses on developing implantable brain-computer interfaces (BCIs). The company aims to treat neurological conditions and enhance human cognitive abilities.</p>
+                        <p>In January 2024, Neuralink successfully implanted its first device in a human patient, marking a significant step toward human trials. By 2025, the company had expanded its clinical trials with multiple successful implants.</p>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="https://substackcdn.com/image/fetch/$s_!Pq0e!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48119e18-bcd2-417a-b77b-08d9fb2b3c12_4050x3003.png" alt="The Boring Company tunnel" class="company-image">
+                    <div class="company-content">
+                        <h3>The Boring Company</h3>
+                        <p>Founded in 2017, The Boring Company aims to alleviate urban traffic through underground transportation systems. Notable projects include a test tunnel in Los Angeles County and the Las Vegas Convention Center Loop.</p>
+                        <p>As of 2025, expansions to Resorts World Las Vegas and other resorts are underway, demonstrating the company's commitment to revolutionizing urban transportation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="innovations">
+            <h2>Key Innovations</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2008</h3>
+                        <p>SpaceX's Falcon 1 becomes the first privately developed liquid-fueled rocket to reach orbit.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2012</h3>
+                        <p>Tesla releases the Model S, revolutionizing the electric vehicle market with its range and performance.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2015</h3>
+                        <p>Tesla introduces Powerwall, a home battery system for storing renewable energy.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2017</h3>
+                        <p>SpaceX achieves the first successful reuse of an orbital rocket, significantly reducing launch costs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2020</h3>
+                        <p>SpaceX's Crew Dragon becomes the first private spacecraft to carry humans to the International Space Station.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2024</h3>
+                        <p>Neuralink successfully implants its first brain chip in a human subject.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://www.investopedia.com/thmb/IubEp21i35VbEX26PJ2L5wn-hpk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/InvestopediaStructuredContent-ElonMusk-final-266adfdf942a462fa4c7ff09ac633ad3.png" alt="Elon Musk portrait" class="gallery-image">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://www.plerdy.com/wp-content/uploads/2025/01/elon-musk-min.jpg" alt="Elon Musk with Tesla" class="gallery-image">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://blog.getaura.ai/hs-fs/hubfs/SpaceX%20launch%20(2).webp?width=1200&height=800&name=SpaceX%20launch%20(2).webp" alt="SpaceX rocket launch" class="gallery-image">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://www.teslarati.com/wp-content/uploads/2025/04/tesla-cybertruck-logo-sales-tsla-scaled.jpeg" alt="Tesla Cybertruck" class="gallery-image">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://miro.medium.com/v2/resize:fit:2000/1*lFBfDRxVfPJdqCSJtpFrtQ.png" alt="Neuralink technology" class="gallery-image">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://static.toiimg.com/thumb/msid-114249913,width-1280,height-720,imgsize-71730,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg" alt="Elon Musk companies" class="gallery-image">
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Elon Musk Fan Page | This is an informational website about Elon Musk and his companies</p>
+    </footer>
+    
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Image gallery functionality
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const fullImg = document.createElement('div');
+                fullImg.style.position = 'fixed';
+                fullImg.style.top = '0';
+                fullImg.style.left = '0';
+                fullImg.style.width = '100%';
+                fullImg.style.height = '100%';
+                fullImg.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                fullImg.style.display = 'flex';
+                fullImg.style.justifyContent = 'center';
+                fullImg.style.alignItems = 'center';
+                fullImg.style.zIndex = '1000';
+                fullImg.style.cursor = 'pointer';
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = img.src;
+                imgElement.style.maxWidth = '90%';
+                imgElement.style.maxHeight = '90%';
+                imgElement.style.objectFit = 'contain';
+                
+                fullImg.appendChild(imgElement);
+                document.body.appendChild(fullImg);
+                
+                fullImg.addEventListener('click', function() {
+                    document.body.removeChild(fullImg);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
